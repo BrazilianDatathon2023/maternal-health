@@ -1,4 +1,27 @@
-# Maternal Health Track
+# Saúde Materno Fetal / Maternal Fetal Health Track
+
+## Sugestões de projetos
+1. Prematuridade
+- Análise de variáveis associadas com prematuridade no Brasil
+- Modelo preditivo prematuridade
+  - Análise de sensibilidade e viéses entre grupos demográficos, estados
+  - Como prevenir prematuridade?
+  
+2. Mães adolescentes
+- Análise de variáveis associadas com gestações em adolescentes no Brasil - https://www.gov.br/ebserh/pt-br/comunicacao/noticias/por-hora-nascem-44-bebes-de-maes-adolescentes-no-brasil-segundo-dados-do-sus
+
+3. Análise de Malformações congênitas
+- CID Q00-Q99, análise de variáveis e sensibilidade associadas com malformações congênitas
+- Modelo preditivo de malformações congênitas
+  - Analise de vieses e diferenças entre grupos demográficos, estados
+
+4. Mortalidade fetal
+ - Análise de variáveis associadas com mortalidade fetal no Brasil
+ - Modelo preditivo de mortalidade fetal
+    - Análise de viéses entre grupos demográficos, estados
+
+
+## Datasets
 
 ## How to get the data from the Brazilian Platform
 1. Open this [webpage](https://pcdas.icict.fiocruz.br/conjunto-de-dados/sistema-de-informacao-sobre-nascidos-vivos/)
