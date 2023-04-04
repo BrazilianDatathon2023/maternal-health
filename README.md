@@ -211,40 +211,40 @@
 | OBITOPARTO | integer | Morte em relação ao parto, conforme tabela: 9 - Ignorado, 1 - Antes, 2 - Durante, 3 - Depois | Death in relation to the birth, according to the table: 9 - Unknown, 1 - Before, 2 - During, 3 - After |
 | def_obito_parto | string | Indicação de como foi a morte em relação ao parto (Nominal, com as seguintes classificações: Antes, Durante, Depois, Ignorado) | Indication of how the death was in relation to the birth (Nominal, with the following classifications: Before, During, After, Unknown) |
 | OBITOPUERP | integer | Morte durante o puerpério, conforme tabela: 9 - Ignorado, 1 - Sim, até 42 dias, 2 - Sim, de 43 dias a 01 ano, 3 - Não | Death during the puerperium, according to the table: 9 - Unknown, 1 - Yes, up to 42 days, 2 - Yes, from 43 days to 01 year, 3 - No |
-| def_obito_puerp | string | Indicação de óbito no puerpério (Nominal, com as seguintes classificações: Sim, até 42 dias após o parto, Sim, de 43 dias
-| OCUP | integer | Occupation, according to the Brazilian Classification of Occupations (CBO-2002) |
-| OCUPMAE | integer | Occupation of the mother, according to the classification of OCCUPATION |
-| def_cbo | string | Definition of the Brazilian Classification of Occupations (CBO) |
-| PARTO | integer | Type of birth, according to the table: 9 - Unknown, 1 - Vaginal, 2 - Cesarean |
-| def_parto | string | Type of birth (Nominal, with the following classifications: Vaginal, Cesarean, Unknown) |
-| PESO | integer | Weight at birth, in grams |
-| QTDFILMORT | integer | Number of dead children, ignored, not including the own |
-| def_num_filhos_mortos | string | Nominal, number of dead children: No children, 1 child, 2 to 4 children, 5 or more children, Unknown |
-| QTDFILVIVO | integer | Number of living children |
-| def_num_filhos_vivos | string | Nominal, number of living children: No children, 1 to 3 children, 4 to 6 children, 7 to 8 children, 9 to 13 children, 14 or more children, Unknown |
-| RACACOR | integer | Raça/Cor: 1 - Branca, 2 - Preta, 3 - Amarela, 4 - Parda, 5 - Indígena | 
-| def_raca_cor | string | Raça/cor (Nominal, com as seguintes classificações: Branca, Preta, Amarela, Parda, Indígena) |
-| SEMAGESTAC | integer | Semanas de gestação |
-| SEXO | integer | Sexo, conforme a tabela: 0 - Ignorado, 1 - Masculino, 2 - Feminino |
-| def_sexo | string | Sexo (Nominal, com as seguintes classificações: Masculino, Feminino, Ignorado) |
-| TIPOBITO | integer | Tipo do óbito: 1 - óbito fetal, 2 - óbito não fetal |
-| def_tipo_obito | string | Tipo de óbito (Nominal, com as seguintes classificações: Fetal e Não Fetal) |
-| ALTCAUSA | string | Sem descrição |
-| AREARES | integer | Sem descrição |
-| BAIRES | integer | Sem descrição |
+| def_obito_puerp | string | Indicação de óbito no puerpério (Nominal, com as seguintes classificações: Sim, até 42 dias após o parto, Sim, de 43 dias) | Indication of death in the puerperium (Nominal, with the following classifications: Yes, up to 42 days after birth, Yes, from 43 days) |
+| OCUP | integer | Ocupação, de acordo com com CBO-2002 | Occupation, according to the Brazilian Classification of Occupations (CBO-2002) |
+| OCUPMAE | integer | Ocupação da mãe, de acordo com a definição de ocupação | Occupation of the mother, according to the classification of OCCUPATION |
+| def_cbo | string | Definição da Classificação Brasileira de Ocupações (CBO) | Definition of the Brazilian Classification of Occupations (CBO) |
+| PARTO | integer | Tipo de parto, de acordo com a tabela: 9 - Ignorado, 1 - Vaginal, 2 - Cesárea | Type of birth, according to the table: 9 - Unknown, 1 - Vaginal, 2 - Cesarean |
+| def_parto | string | Tipo de parto (Nominal, com as seguintes classificações: Vaginal, Cesárea, Ignorado) | Type of birth (Nominal, with the following classifications: Vaginal, Cesarean, Unknown) |
+| PESO | integer | Peso ao nascer, em gramas | Weight at birth, in grams |
+| QTDFILMORT | integer | Número de filhos mortos, ignorados, não contando o próprio | Number of dead children, ignored, not including the own |
+| def_num_filhos_mortos | string | Nominal, número de filhos mortos: Sem filhos, 1 filho, 2 a 4 filhos, 5 ou mais filhos, Ignorado | Nominal, number of dead children: No children, 1 child, 2 to 4 children, 5 or more children, Unknown |
+| QTDFILVIVO | integer | Número de filhos vivos, ignorados, não contando o próprio | Number of living children, ignored, not including the own |
+| def_num_filhos_vivos | string | Nominal, número de filhos vivos: Sem filhos, 1 a 3 filhos, 4 a 6 filhos, 7 a 8 filhos, 9 a 13 filhos, 14 ou mais filhos, Ignorado | Nominal, number of living children: No children, 1 to 3 children, 4 to 6 children, 7 to 8 children, 9 to 13 children, 14 or more children, Unknown |
+| RACACOR | integer | Raça/Cor: 1 - Branca, 2 - Preta, 3 - Amarela, 4 - Parda, 5 - Indígena | Race / Color: 1 - White, 2 - Black, 3 - Yellow, 4 - Brown, 5 - Indigenous |
+| def_raca_cor | string | Raça/cor (Nominal, com as seguintes classificações: Branca, Preta, Amarela, Parda, Indígena) | Race / color (Nominal, with the following classifications: White, Black, Yellow, Brown, Indigenous) |
+| SEMAGESTAC | integer | Semanas de gestação | Weeks of pregnancy |
+| SEXO | integer | Sexo, conforme a tabela: 0 - Ignorado, 1 - Masculino, 2 - Feminino | Sex, according to the table: 0 - Ignored, 1 - Male, 2 - Female |
+| def_sex | string | Sexo (Nominal, com as seguintes classificações: Masculino, Feminino, Ignorado) | Sex (Nominal: Male, Female, Unknown) |
+| TIPOBITO | integer | Tipo do óbito: 1 - óbito fetal, 2 - óbito não fetal | Type of death: 1 - fetal death, 2 - non-fetal death |
+| def_tipo_obito | string | Tipo de óbito (Nominal, com as seguintes classificações: Fetal e Não Fetal) | Type of death (Nominal, with the following classifications: Fetal and Non-Fetal) |
+| ALTCAUSA | string | Sem descrição | No description |
+| AREARES | integer | Sem descrição | No description |
+| BAIRES | integer | Sem descrição | No description |
 | CB_PRE | string | Causa selecionada sem re-
-| CIRURGIA | integer | Indica se houve cirurgia, conforme a tabela: 9 - Ignorado, 1 - Sim, 2 - Não |
-| def_cirurgia | string | Indica se houve cirurgia (Nominal, com as seguintesclassificações: Sim, Não, Ignorado) |
-| CODBAIOCOR | integer | Código do Bairro de ocorrência. |
-| CODBAIRES | integer | Código do Bairro de residência |
-| CODCART | integer | Sem descrição |
-| CODIFICADO | string | Se estiver codificado (valor: S) ou não (valor: N) |
-| CODIGO | integer | Sem descrição |
-| CODMUNRES | integer | Município de residência do falecido, conforme códigos IBGE |
-| res_ALTITUDE | integer | Altitude, em metros, da sede do Município de residência da pessoa que foi à óbito |
-| res_AMAZONIA | string | Indica (S ou N) se o município de residência da pessoa que foi à óbito faz parte da Amazônia Legal (conforme IBGE) |
-| res_AREA | integer | Área do Município de residência da pessoa que foi à óbito, em quilômetros quadrados |
-| res_CAPITAL | string | Indica (S ou N) se o município de residência da pessoa que foi à óbito é capital de estado |
+| CIRURGIA | integer | Indica se houve cirurgia, conforme a tabela: 9 - Ignorado, 1 - Sim, 2 - Não | Indicates whether surgery was performed, according to the table: 9 - Unknown, 1 - Yes, 2 - No |
+| def_cirurgia | string | Indica se houve cirurgia (Nominal, com as seguintesclassificações: Sim, Não, Ignorado) | Indicates whether surgery was performed (Nominal, with the following classifications: Yes, No, Unknown) |
+| CODBAIOCOR | integer | Código do Bairro de ocorrência. | Code of the neighborhood of occurrence. |
+| CODBAIRES | integer | Código do Bairro de residência | Code of the neighborhood of residence |
+| CODCART | integer | Sem descrição | No description |
+| CODIFICADO | string | Se estiver codificado (valor: S) ou não (valor: N) | If it is encoded (value: S) or not (value: N) |
+| CODIGO | integer | Sem descrição | No description |
+| CODMUNRES | integer | Município de residência do falecido, conforme códigos IBGE | Municipality of residence of the deceased, according to IBGE codes |
+| res_ALTITUDE | integer | Altitude, em metros, da sede do Município de residência da pessoa que foi à óbito | Altitude, in meters, of the seat of the Municipality of residence of the person who died |
+| res_AMAZONIA | string | Indica (S ou N) se o município de residência da pessoa que foi à óbito faz parte da Amazônia Legal (conforme IBGE) | Indicates (S or N) if the municipality of residence of the person who died is part of the Legal Amazon (according to IBGE) |
+| res_AREA | integer | Área do Município de residência da pessoa que foi à óbito, em quilômetros quadrados | Area of the Municipality of residence of the person who died, in square kilometers |
+| res_CAPITAL | string | Indica (S ou N) se o município de residência da pessoa que foi à óbito é capital de estado | Indicates (S or N) if the municipality of residence of the person who died is the capital of the state |
 | res_codigo_adotado | integer | Armazena o código atribuído ao município de residência da pessoa que foi à óbito, tratando os casos em que múltiplos códigos tenham sido utilizados para um mesmo município ao integero do tempo | Stores the code assigned to the municipality of residence of the person who died, treating the cases in which multiple codes have been used for the same municipality over time |
 | res_CODIGO_UF | string | Código IBGE da Unidade da Federação de residência da pessoa que foi à óbito | IBGE code of the Federal Unit of residence of the person who died |
 | res_coordenadas | geo_point | Coordenadas do município de residência da pessoa que foi à óbito | Coordinates of the municipality of residence of the person who died |
@@ -448,7 +448,7 @@
 | born_code_adopted | int8 | Stores the code currently assigned to the municipality of birth, handling cases in which multiple codes have been used for the same municipality over time |
 | res_MUNNOME | text | Name of municipality of residence |
 | res_MUNNOMEX | text | Name of municipality of residence in capital letters and without accents |
-| res_AMAZONIA | text | Indicates (Y/N) if the municipality of residence is part of the Legal Amazon (according to IBGE) |
+| res_AMAZONIA | text | Indica (S/N) se o município faz parte da Amazónia legalmente | Indicates (Y/N) if the municipality of residence is part of the Legal Amazon (according to IBGE) |
 | res_BORDER | text | Indicates (Y/N) if the municipality of residence is part of the border strip (according to IBGE) |
 | res_CAPITAL | text | Indicates (Y/N) if the municipality of residence is the capital of UF |
 | res_MSAUDCOD | int8 | Macroregional Health Code to which the municipality of residence belongs |
