@@ -8,7 +8,7 @@
   - Como prevenir prematuridade?
   
 2. Mães adolescentes
-- Análise de variáveis associadas com gestações em adolescentes no Brasil - https://www.gov.br/ebserh/pt-br/comunicacao/noticias/por-hora-nascem-44-bebes-de-maes-adolescentes-no-brasil-segundo-dados-do-sus
+- Análise de variáveis associadas com gestações em adolescentes no Brasil [link](https://www.gov.br/ebserh/pt-br/comunicacao/noticias/por-hora-nascem-44-bebes-de-maes-adolescentes-no-brasil-segundo-dados-do-sus)
 
 3. Análise de Malformações congênitas
 - CID Q00-Q99, análise de variáveis e sensibilidade associadas com malformações congênitas
@@ -24,22 +24,24 @@
 ## Datasets
 
 ## How to get the data from the Brazilian Platform
-1. Open this [webpage](https://pcdas.icict.fiocruz.br/conjunto-de-dados/sistema-de-informacao-sobre-nascidos-vivos/)
+1. Open these:
+* [Sistema de Informações sobre Nascidos Vivos](https://pcdas.icict.fiocruz.br/conjunto-de-dados/sistema-de-informacao-sobre-nascidos-vivos/)
+* [Sistema de Informações sobre Óbitos Fetais ](https://pcdas.icict.fiocruz.br/conjunto-de-dados/sistema-de-informacao-sobre-mortalidade-declaracao-de-obitos-fetais-sim-dofet)
 2. Register yourself (Brazilian ID required)
 3. Access and explore the data
 
 ## How to get the data from Google Drive
 1. Download the data from this [link](https://drive.google.com/file/d/1D2RvrBoNO1dXt6CQy0CLJk7FNXvOpqjC/view?usp=share_link)
 2. Place `ETLSINASC.zip` under a folder in the root called `data` 
+3. Place `ETLSIM.DOFET.zip` under a folder in the root called `data`	
 
 
-## How to split the data into chunks
-
+## How to split the data into chunks (ETLSINASC only)
 1. Run `python split_data.py`
 2. The split CSV files will show up in a folder called `split`
 
-## Variables Dictionary
-(in Portuguese & translated to English)
+## Sistema de Informações sobre Nascidos Vivos (SINASC) - Dicionário de Variáveis
+(em Portuguese & translated to English)
 
 | Variável | Tipo | Descrição | Description |
 | --- | --- | --- | --- |
@@ -159,7 +161,202 @@
 | parto_prematuro        | int8      | Indica a prematuridade do nascimento. 0: não há indícios de prematuridade; 1: há indício de prematuridade dado pela idade gestacional (GESTACAO<=4); 2: há indício de prematuridade dado pelo peso ao nascer (PESO<2500); 3: a idade gestacional e o peso ao nascer indicam prematuridade | Indicates the prematurity of the birth. 0: there are no indications of prematurity; 1: there is a hint of prematurity given by the gestational age (GESTACAO <= 4); 2: there is a hint of prematurity given by the weight at birth (PESO <2500); 3: the gestational age and the weight at birth indicate prematurity |
 | def_parto_prematuro    | text      | Indica a prematuridade do nascimento. Termo: não há indícios de prematuridade; Inconclusivo-IG: há indício de prematuridade dado pela idade gestacional (GESTACAO<=4); Inconclusivo-Peso: há indício de prematuridade dado pelo peso ao nascer (PESO<2500); Prematuro: a idade gestacional e o peso ao nascer indicam prematuridade | Indicates the prematurity of the birth. Term: there are no indications of prematurity; Inconclusive-IG: there is a hint of prematurity given by the gestational age (GESTACAO <= 4); Inconclusive-Weight: there is a hint of prematurity given by the weight at birth (PESO <2500); Premature: the gestational age and the weight at birth indicate prematurity |
 
-## Variables Dictionary (in English)
+## Sistema de Informações sobre Óbitos Fetais (SIM-DOFET) - Dicionário de Variáveis
+(em Português & translated to English)
+
+| Variável | Tipo | Descrição | Description |
+| --- | --- | --- | --- |
+| DTNASC | string |	Data de nascimento do falecido no formato ddmmaaaa | Date of birth of the deceased in the format ddmmaaaa |
+| data_nasc | date |	Data de nascimento do falecido | Date of birth of the deceased |
+| ano_nasc | integer |	Ano do nascimento | Year of birth |
+| dia_semana_nasc | string |	Dia da semana em que ocorreu o nascimento | Day of the week on which the birth occurred |
+| DTOBITO | string |	Data do óbito, no formato ddmmaaaa | Date of death, in the format ddmmaaaa |
+| data_obito | date |	Data de ocorrência do óbito | Date of occurrence of death |
+| def_ano_epi | string |	Ano epidemiológica de ocorrência do óbito fetal | Epidemiological year of occurrence of fetal death |
+| def_semana_ano_epi | string |	Semana e ano epidemiológico de ocorrência do óbito fetal | Week and epidemiological year of occurrence of fetal death |
+| def_semana_epi | string |	Semana epidemiológico de ocorrência do óbito | Epidemiological week of occurrence of death |
+| ano_obito | integer |	Ano do óbito | Year of death |
+| dia_semana_obito | string |	Dia da semana em que ocorreu o óbito | Day of the week on which the death occurred |
+| ACIDTRAB | integer |	Indica se foi acidente de trabalho, 9 - Ignorado, 1 - Sim, 2 - Não | Indicates whether it was a work accident, 9 - Unknown, 1 - Yes, 2 - No |
+| def_acid_trab | string |	Indicação de ocorrência de acidente de trabalho (Nominal, com as seguintes classificações: Sim, Não, Ignorado) | Indication of occurrence of work accident (Nominal, with the following classifications: Yes, No, Unknown) |
+| ASSISTMED | integer |	Indica se houve assistência medica, conforme a tabela: 9 - Ignorado, 1 - Com assistência, 2 - Sem assistência | Indicates whether there was medical assistance, according to the table: 9 - Unknown, 1 - With assistance, 2 - Without assistance |
+| def_assist_med | string |	Assistência médica (Nominal, com as seguintes classificações: Com assistência, Sem assistência, Ignorado) | Medical assistance (Nominal, with the following classifications: With assistance, Without assistance, Unknown) |
+| ATESTANTE | integer |	Indica se o médico que assina atendeu o paciente: 1 - Sim, 2 - Substituto, 3 - IML, 4 - SVO, 5 - Outros | Indicates whether the doctor who signs attended the patient: 1 - Yes, 2 - Substitute, 3 - IML, 4 - SVO, 5 - Others |
+| def_atestante | string |	Indica se o médico que assina atendeu o paciente (Nominal): 1 - Sim, 2 - Substituto, 3 - IML, 4 - SVO, 5 - Outros | Indicates whether the doctor who signs attended the patient (Nominal): 1 - Yes, 2 - Substitute, 3 - IML, 4 - SVO, 5 - Others |
+| CAUSABAS | string |	Causa básica do óbito | Basic cause of death |
+| causabas_capitulo | string | Capítulo CID-10 da causa base do óbito | ICD-10 Chapter of the basic cause of death |
+| causabas_categoria | string | Categoria CID-10 da causa base do óbito | ICD-10 Category of the basic cause of death |
+| causabas_grupo | string | Grupo CID-10 da causa base do óbito | ICD-10 Group of the basic cause of death |
+| causabas_subcategoria | string | Subcategoria CID-10 da causa base do óbito | ICD-10 Sub-categoru of the basic cause of death |
+| CIRCOBITO | integer | Indica o tipo de acidente, se cabível: 9 - Ignorado, 1 - Acidente, 2 - Suicídio, 3 - Homicídio, 4 - Outros | Indicates the type of accident, if appliable: 9 - Ignored, 1 - Accident, 2 - Suicide, 3 - Murder, 4 - Other |
+| def_circ_obito | string | Indicação da provável circunstância de morte não natural (Nominal, com as seguintes classificações: Acidente, Suicídio, Homicídio, Outros, Ignorado) | Indication of the probable circumstance of unnatural death (Nominal, with the following classifications: Accident, Suicide, Homicide, Others, Unknown) |
+| CODESTAB | string | Código do estabelecimento | Establishment Code |
+| ESC | string | Escolaridade, Anos de estudo concluídos: 1 - Nenhuma, 2 - 1 a 3 anos, 3 - 4 a 7 anos, 4 - 8 a 11 anos, 5 - 12 e mais, 9 - Ignorado | Education, Years of study completed: 1 - None, 2 - 1 to 3 years, 3 - 4 to 7 years, 4 - 8 to 11 years, 5 - 12 and more, 9 - Unknown |
+| def_escol | string | Escolaridade (Nominal, com as seguintes classificações: Nenhuma, de 1 a 3 anos, de 4 a 7 anos, de 8 a 11 anos, 12 e mais, Ignorado) | Schooling (Nominal, with the following classifications: None, 1 to 3 years, 4 to 7 years, 8 to 11 years, 12 and more, Unknown) |
+| ESCMAE | integer |	Escolaridade da mãe, Anos de estudo concluídos: 1 - Nenhuma, 2 - 1 a 3 anos, 3 - 4 a 7 anos, 4 - 8 a 11 anos, 5 - 12 e mais, 9 - Ignorado | Mother's education, Years completed: 1 - None, 2 - 1 to 3 years, 3 - 4 to 7 years, 4 - 8 to 11 years, 5 - 12 and more, 9 - Unknown |
+| def_escol_mae | string |	Escolaridade da mãe (Nominal, com as seguintes classificações: Nenhuma, de 1 a 3 anos, de 4 a 7 anos, de 8 a 11 anos, 12 e mais, Ignorado) | Mother's education (Nominal, with the following classifications: None, from 1 to 3 years, from 4 to 7 years, from 8 to 11 years, 12 and more, Unknown) |
+| ESTCIV | integer |	Estado civil, conforme a tabela: 1 - Solteiro, 2 - Casado, 3 - Viúvo, 4 - Separado judicialmente, 5 - União consensual (versões anteriores), 9 - Ignorado | Marital status, according to the table: 1 - Single, 2 - Married, 3 - Widowed, 4 - Separated judicially, 5 - Consensual union (previous versions), 9 - Unknown |
+| def_est_civil | string |	Estado civil (Situação conjugal: Solteiro, Casado, Viúvo, Separado judicialmente/divorciado, União estável, Ignorado) | Marital status (Marital status: Single, Married, Widowed, Separated judicially/divorced, Stable union, Unknown) |
+| GESTACAO | integer |	Semanas de gestação, conforme a tabela: 9 - Ignorado, 1 - Menos de 22 semanas, 2 - 22 a 27 semanas, 3 - 28 a 31 semanas, 4 - 32 a 36 semanas, 5 - 37 a 41 semanas, 6 - 42 semanas e mais | Weeks of pregnancy, according to the table: 9 - Unknown, 1 - Less than 22 weeks, 2 - 22 to 27 weeks, 3 - 28 to 31 weeks, 4 - 32 to 36 weeks, 5 - 37 to 41 weeks, 6 - 42 weeks and more |
+| def_gestacao | string | Semanas de gestação (Nominal, com as seguintes classificações: Ignorado, Menos de 22 semanas, 22 a 27 semanas, 28 a 31 semanas, 32 a 36 semanas, 37 a 41 semanas, 42 semanas e mais) | Weeks of pregnancy (Nominal, with the following classifications: Unknown, Less than 22 weeks, 22 to 27 weeks, 28 to 31 weeks, 32 to 36 weeks, 37 to 41 weeks, 42 weeks and more) |
+| GRAVIDEZ | integer | Tipo de gravidez, conforme a tabela: 9 - Ignorado, 1 - Única, 2 - Dupla, 3 - Tripla e mais | Type of pregnancy, according to the table: 9 - Unknown, 1 - Single, 2 - Double, 3 - Triple and more |
+| def_gravidez | string | Tipo de gravidez (Nominal, com as seguintes classificações: Única, Dupla, Tripla e mais, Ignorada) | Type of pregnancy (Nominal, with the following classifications: Single, Double, Triple and more, Ignored) |
+| IDADE | int4 | Idade: composto de dois subcampos. - O primeiro, de 1 dígito, indica a unidade da idade (se 1 = minuto, se 2 = hora, se 3 = mês, se 4 = ano, se = 5 idade maior que 100 anos). - O segundo, de dois dígitos, indica a quantidade de unidades: Idade menor de 1 hora - subcampo varia de 01 e 59 (minutos), De 1 a 23 Horas - subcampo varia de 01 a 23 (horas), De 24 horas e 29 dias - subcampo varia de 01 a 29 (dias), De 1 a menos de 12 meses completos - subcampo varia de 01 a 11 (meses), Anos - subcampo varia de 00 a 99, 9 - ignorado | Age: composed of two subfields. - The first, of 1 digit, indicates the age unit (if 1 = minute, if 2 = hour, if 3 = month, if 4 = year, if = 5 age greater than 100 years). - The second, of two digits, indicates the number of units: Age less than 1 hour - subfield varies from 01 to 59 (minutes), From 1 to 23 Hours - subfield varies from 01 to 23 (hours), From 24 hours and 29 days - subfield varies from 01 to 29 (days), From 1 to less than 12 complete months - subfield varies from 01 to 11 (months), Years - subfield varies from 00 to 99, 9 - ignored |
+| IDADEMAE | int4 | Idade da mãe em anos | Age of the mother in years |
+| LOCOCOR | integer | Local de ocorrência do óbito, conforme a tabela: 9 - Ignorado, 1 - Hospital, 2 - Outro estab saúde, 3 - Domicílio, 4 - Via Pública, 5 - Outros | Place of occurrence of the death, according to the table: 9 - Unknown, 1 - Hospital, 2 - Other health estab, 3 - Home, 4 - Public Way, 5 - Others |
+| def_loc_ocor | string | Local de ocorrência do óbito (Nominal, com as seguintes classificações: Hospital, Outros estabelecimentos de saúde, Domicílio, Via pública, Outros, Ignorado) | Place of occurrence of the death (Nominal, with the following classifications: Hospital, Other health establishments, Home, Public Way, Others, Unknown) |
+| NATURAL | integer | Naturalidade, conforme a tabela de países. Se for brasileiro,porém, o primeiro dígito contém 8 e os demais o código da UF de naturalidade | Place of birth, according to the table of countries. If it is Brazilian, however, the first digit contains 8 and the rest the code of the state of birth |
+| OBITOGRAV | integer | Morte durante a Gravidez conforme tabela: 9 - Ignorado, 1 - Sim, 2 - Não | Death during pregnancy according to table: 9 - Unknown, 1 - Yes, 2 - No |
+| def_obito_grav | string | Indicação de ocorrência do óbito durante a gravidez (Nominal, com as seguintes classificações: Sim, Não, Ignorado) | Indication of occurrence of death during pregnancy (Nominal, with the following classifications: Yes, No, Unknown) |
+| OBITOPARTO | integer | Morte em relação ao parto, conforme tabela: 9 - Ignorado, 1 - Antes, 2 - Durante, 3 - Depois | Death in relation to the birth, according to the table: 9 - Unknown, 1 - Before, 2 - During, 3 - After |
+| def_obito_parto | string | Indicação de como foi a morte em relação ao parto (Nominal, com as seguintes classificações: Antes, Durante, Depois, Ignorado) | Indication of how the death was in relation to the birth (Nominal, with the following classifications: Before, During, After, Unknown) |
+| OBITOPUERP | integer | Morte durante o puerpério, conforme tabela: 9 - Ignorado, 1 - Sim, até 42 dias, 2 - Sim, de 43 dias a 01 ano, 3 - Não | Death during the puerperium, according to the table: 9 - Unknown, 1 - Yes, up to 42 days, 2 - Yes, from 43 days to 01 year, 3 - No |
+| def_obito_puerp | string | Indicação de óbito no puerpério (Nominal, com as seguintes classificações: Sim, até 42 dias após o parto, Sim, de 43 dias
+| OCUP | integer | Occupation, according to the Brazilian Classification of Occupations (CBO-2002) |
+| OCUPMAE | integer | Occupation of the mother, according to the classification of OCCUPATION |
+| def_cbo | string | Definition of the Brazilian Classification of Occupations (CBO) |
+| PARTO | integer | Type of birth, according to the table: 9 - Unknown, 1 - Vaginal, 2 - Cesarean |
+| def_parto | string | Type of birth (Nominal, with the following classifications: Vaginal, Cesarean, Unknown) |
+| PESO | integer | Weight at birth, in grams |
+| QTDFILMORT | integer | Number of dead children, ignored, not including the own |
+| def_num_filhos_mortos | string | Nominal, number of dead children: No children, 1 child, 2 to 4 children, 5 or more children, Unknown |
+| QTDFILVIVO | integer | Number of living children |
+| def_num_filhos_vivos | string | Nominal, number of living children: No children, 1 to 3 children, 4 to 6 children, 7 to 8 children, 9 to 13 children, 14 or more children, Unknown |
+| RACACOR | integer | Raça/Cor: 1 - Branca, 2 - Preta, 3 - Amarela, 4 - Parda, 5 - Indígena | 
+| def_raca_cor | string | Raça/cor (Nominal, com as seguintes classificações: Branca, Preta, Amarela, Parda, Indígena) |
+| SEMAGESTAC | integer | Semanas de gestação |
+| SEXO | integer | Sexo, conforme a tabela: 0 - Ignorado, 1 - Masculino, 2 - Feminino |
+| def_sexo | string | Sexo (Nominal, com as seguintes classificações: Masculino, Feminino, Ignorado) |
+| TIPOBITO | integer | Tipo do óbito: 1 - óbito fetal, 2 - óbito não fetal |
+| def_tipo_obito | string | Tipo de óbito (Nominal, com as seguintes classificações: Fetal e Não Fetal) |
+| ALTCAUSA | string | Sem descrição |
+| AREARES | integer | Sem descrição |
+| BAIRES | integer | Sem descrição |
+| CB_PRE | string | Causa selecionada sem re-
+| CIRURGIA | integer | Indica se houve cirurgia, conforme a tabela: 9 - Ignorado, 1 - Sim, 2 - Não |
+| def_cirurgia | string | Indica se houve cirurgia (Nominal, com as seguintesclassificações: Sim, Não, Ignorado) |
+| CODBAIOCOR | integer | Código do Bairro de ocorrência. |
+| CODBAIRES | integer | Código do Bairro de residência |
+| CODCART | integer | Sem descrição |
+| CODIFICADO | string | Se estiver codificado (valor: S) ou não (valor: N) |
+| CODIGO | integer | Sem descrição |
+| CODMUNRES | integer | Município de residência do falecido, conforme códigos IBGE |
+| res_ALTITUDE | integer | Altitude, em metros, da sede do Município de residência da pessoa que foi à óbito |
+| res_AMAZONIA | string | Indica (S ou N) se o município de residência da pessoa que foi à óbito faz parte da Amazônia Legal (conforme IBGE) |
+| res_AREA | integer | Área do Município de residência da pessoa que foi à óbito, em quilômetros quadrados |
+| res_CAPITAL | string | Indica (S ou N) se o município de residência da pessoa que foi à óbito é capital de estado |
+| res_codigo_adotado | integer | Armazena o código atribuído ao município de residência da pessoa que foi à óbito, tratando os casos em que múltiplos códigos tenham sido utilizados para um mesmo município ao integero do tempo | Stores the code assigned to the municipality of residence of the person who died, treating the cases in which multiple codes have been used for the same municipality over time |
+| res_CODIGO_UF | string | Código IBGE da Unidade da Federação de residência da pessoa que foi à óbito | IBGE code of the Federal Unit of residence of the person who died |
+| res_coordenadas | geo_point | Coordenadas do município de residência da pessoa que foi à óbito | Coordinates of the municipality of residence of the person who died |
+| res_CSAUDCOD | integer | Código da Microrregional de Saúde a que o Município de residência da pessoa que foi à óbito pertence | Code of the Microregional Health to which the Municipality of residence of the person who died belongs |
+| res_FRONTEIRA | string | Indica (S ou N) se o município de residência da pessoa que foi à óbito faz parte da faixa de fronteira (conforme IBGE) | Indicates (S or N) if the municipality of residence of the person who died is part of the border strip (according to IBGE) |
+| res_LATITUDE | float | Latitude da sede do Município de residência da pessoa que foi à óbito | Latitude of the headquarters of the Municipality of residence of the person who died |
+| res_integerITUDE | float | integeritude da sede do Município de residência da pessoa que foi à óbito | integeritude of the headquarters of the Municipality of residence of the person who died |
+| res_MSAUDCOD | integer | Código da Macrorregional de Saúde a que o Município de residência da pessoa que foi à óbito pertence | Code of the Macroregional Health to which the Municipality of residence of the person who died belongs |
+| res_MUNNOME | string | Nome (acentuado, maiúsculas e minúsculas) do Município (padrão DOS, página de código 850) de residência da pessoa que foi à óbito | Name (accented, uppercase and lowercase) of the Municipality (DOS standard, code page 850) of residence of the person who died |
+| res_MUNNOMEX | string | Nome (sem acentos, em maiúsculas) do Município de residência da pessoa que foi à óbito | Name (without accents, in uppercase) of the Municipality of residence of the person who died |
+| res_NOME_UF | string | Nome da unidade da federação de residência da pessoa que foi à óbito | Name of the federal unit of residence of the person who died |
+| res_REGIAO | string | Nome da região da unidade da federação de residência do falecido | Name of the region of the federal unit of residence of the deceased |
+| res_RSAUDCOD | integer | Código da Regional de Saúde a que o Município de residência da pessoa que foi à óbito pertence | Code of the Regional Health to which the Municipality of residence of the person who died belongs |
+| res_SIGLA_UF | string | Sigla da unidade da federação de residência da pessoa que foi à óbito | Abbreviation of the federal unit of residence of the person who died |
+| CODMUNOCOR | integer | Município de ocorrência do óbito, conforme códigos IBGE | Municipality of occurrence of death, according to IBGE codes |
+| ocor_ALTITUDE | integer | Altitude, em metros, da sede do Município de ocorrência do óbito | Altitude, in meters, of the headquarters of the Municipality of occurrence of death |
+| ocor_AMAZONIA | string | Indica (S ou N) se o município de ocorrência do óbito faz parte da Amazônia Legal (conforme IBGE) | Indicates (S or N) if the municipality of occurrence of death is part of the Legal Amazon (according to IBGE) |
+| ocor_AREA | integer | Área, em quilômetros quadrados, do Município de ocorrência do óbito, segundo a Resolução 05, de 10/12/2002, do IBGE | Area, in square kilometers, of the Municipality of occurrence of death, according to Resolution 05, of 10/12/2002, of IBGE |
+| ocor_CAPITAL | string | Indica (S ou N) se o município de ocorrência do óbito é capital da UF | Indicates (S or N) if the municipality of occurrence of death is the capital of the UF |
+| ocor_codigo_adotado | integer | Armazena o código atribuído ao município de ocorrência do óbito, tratando os casos em que múltiplos códigos tenham sido utilizados para um mesmo município ao integero do tempo | Stores the code assigned to the municipality of occurrence of death, treating the cases in which multiple codes have been used for the same municipality over time |
+| ocor_CODIGO_UF | string | Código IBGE da Unidade da Federação de ocorrência do óbito | IBGE code of the Federal Unit of occurrence of death |
+| ocor_coordenadas | geo_point | Coordenadas do município de ocorrência do óbito | Coordinates of the municipality of occurrence of death |
+| ocor_CSAUDCOD | integer | Código da Microrregional de Saúde a que o Município de ocorrência do óbito pertence | Code of the Microregional Health to which the Municipality of occurrence of death belongs |
+| ocor_FRONTEIRA | string | Indica (S ou N) se o município de ocorrência do óbito faz parte da faixa de fronteira (conforme IBGE) | Indicates (S or N) if the municipality of occurrence of death is part of the border strip (according to IBGE) |
+| ocor_LATITUDE | float | Latitude da sede do Município de ocorrência do óbito | Latitude of the headquarters of the Municipality of occurrence of death |
+| ocor_integerITUDE | float | integeritude da sede do Município de ocorrência do óbito | integeritude of the headquarters of the Municipality of occurrence of death |
+| ocor_MSAUDCOD | integer | Código da Macrorregional de Saúde a que o Município de ocorrência do óbito pertence | Code of the Macroregional Health to which the Municipality of occurrence of death belongs |
+| ocor_MUNNOME | string | Nome (acentuado, maiúsculas e minúsculas) do Município (padrão DOS, página de código 850) de ocorrência do óbito | Name (accented, uppercase and lowercase) of the Municipality (DOS standard, code page 850) of occurrence of death |
+| ocor_MUNNOMEX | string | Nome (sem acentos, em maiúsculas) do Município de ocorrência do óbito | Name (without accents, in uppercase) of the Municipality of occurrence of death |
+| ocor_NOME_UF | string | Nome da unidade da federação de ocorrência do óbito | Name of the federal unit of occurrence of death |
+| ocor_REGIAO | string | Nome da região da unidade da federação de ocorrência do óbito | Name of the region of the federal unit of occurrence of death |
+| ocor_RSAUDCOD | integer | Código da Regional de Saúde a que o Município de ocorrência do óbito pertence | Code of the Regional Health to which the Municipality of occurrence of death belongs |
+| ocor_SIGLA_UF | string | Sigla da unidade da federação de ocorrência do óbito | Abbreviation of the federal unit of occurrence of death |
+| CODMUNCART | integer | Sem descrição | No description |
+| COMUNSVOIM | integer | Código do município do SVO ou do IML | Code of the municipality of SVO or IML |
+| CONTADOR | integer | Sem descrição | No description |
+| CRITICA | integer | Sem descrição | No description |
+| CRSOCOR | integer | Sem descrição | No description |
+| CRSRES | integer | Sem descrição | No description |
+| DIFDATA | string | Diferença entre a data de óbito e data do recebimento original da DO ([DTOBITO] – [DTRECORIG]) | Difference between the date of death and the original receipt date of the DO ([DTOBITO] - [DTRECORIG]) |
+| DTATESTADO | string | Data do Atestado | Date of the Certificate |
+| DTCADASTRO | string | Data de cadastro do registro no sistema | Date of registration of the record in the system |
+| DTCADINF | string | Sem descrição | No description |
+| DTCADINV | string | Sem descrição | No description |
+| DTCONCASO | string | Sem descrição | No description |
+| DTCONINV | string | Sem descrição | No description |
+| DTINVESTIG | string | Data de investigação | Date of investigation |
+| DTRECEBIM | string | Data de recebimento no nível central, data da última atualização do registro | Date of receipt at the central level, date of the last update of the record |
+| DTRECORIG | string | Data do recebimento original: dd/mm/aaaa | Date of original receipt: dd/mm/aaaa |
+| DTRECORIGA | string | Data do recebimento original: dd/mm/aaaa | Date of original receipt: dd/mm/aaaa |
+| DTREGCART | string | Sem descrição | No description |
+| ESC2010 | integer | Escolaridade 2010. Valores: 0 - Sem escolaridade, 1 - Fundamental I (1a a 4a série), 2 - Fundamental II (5a a 8a série), 3 - Médio (antigo 2o Grau), 4 - Superior incompleto, 5 - Superior completo, 9 - Ignorado. | Education 2010. Values: 0 - No schooling, 1 - Fundamental I (1st to 4th series), 2 - Fundamental II (5th to 8th series), 3 - High School (old 2nd Grade), 4 - Incomplete higher education, 5 - Complete higher education, 9 - Ignored. |
+| ESCFALAGR1 | string | Escolaridade 2010 agregada. Valores: 00 - Sem Escolaridade, 01 - Fundamental I Incompleto, 02 - Fundamental I Completo, 03 - Fundamental II Incompleto, 04 - Fundamental II Completo, 05 - Ensino Médio Incompleto, 06 - Ensino Médio Completo, 07 - Superior Incompleto, 08 - Superior Completo, 09 - Ignorado, 10 - Fundamental I Incompleto ou Inespecífico, 11 - Fundamental II Incompleto ou Inespecífico, 12 - Ensino Médio Incompleto ou Inespecífico, 13 - Ensino Médio Completo ou Inespecífico, 14 - Superior Incompleto ou Inespecífico, 15 - Superior Completo ou Inespecífico | Education 2010 aggregated. Values: 00 - No Education, 01 - Incomplete Fundamental I, 02 - Complete Fundamental I, 03 - Incomplete Fundamental II, 04 - Complete Fundamental II, 05 - Incomplete High School, 06 - Complete High School, 07 - Incomplete Higher Education, 08 - Complete Higher Education, 09 - Ignored, 10 - Incomplete or unspecified Fundamental I, 11 - Incomplete or unspecified Fundamental II, 12 - Incomplete or unspecified High School, 13 - Complete or unspecified High School, 14 - Incomplete or unspecified Higher Education, 15 - Complete or unspecified Higher Education |
+| ESCMAE2010 | integer | Escolaridade 2010. Valores: 0 - Sem escolaridade, 1 - Fundamental I (1a a 4a série), 2 - Fundamental II (5a a 8a série), 3 - Médio (antigo 2o Grau), 4 - Superior incompleto, 5 - Superior completo, 9 - Ignorado. | Education 2010. Values: 0 - No schooling, 1 - Fundamental I (1st to 4th series), 2 - Fundamental II (5th to 8th series), 3 - High School (old 2nd Grade), 4 - Incomplete higher education, 5 - Complete higher education, 9 - Ignored. |
+| ESTABDESCR | string | Sem descrição | No description |
+| ETNIA | string | Sem descrição | No description |
+| EXAME | integer | Indica se houve exame complementar, conforme a tabela: 9 - Ignorado, 1 - Sim, 2 - Não | Indicates whether there was a complementary exam, according to the table: 9 - Ignored, 1 - Yes, 2 - No |
+| def_exame | string | Indicação de realização de exame (Nominal, com as seguintes classificações: Sim, Não, Ignorado) | Indication of the performance of an exam (Nominal, with the following classifications: Yes, No, Ignored) |
+| FILHMORT | integer | Sem descrição | No description |
+| FILHVIVOS | integer | Sem descrição | No description |
+| FONTEINV | integer | Fonte de investigação: 1 - Comitê de Morte Materna | Source of investigation: 1 - Maternal Death Committee |
+| FONTE | integer | Fonte da informação, conforme a tabela: 9 - Ignorado, 1 - Boletim de Ocorrência, 2 - Hospital, 3 - Família, 4 - Outra | Source of information, according to the table: 9 - Ignored, 1 - Police Report, 2 - Hospital, 3 - Family, 4 - Other |
+| def_fonte | string | Fonte de informação (Nominal, com as seguintes classificações: Boletim de Ocorrência, Hospital, Família, Outra, Ignorado) | Source of information (Nominal, with the following classifications: Police Report, Hospital, Family, Other, Ignored) |
+| FONTES | string | Sem descrição | No description |
+| FONTESINF | string | Sem descrição | No description |
+| FONTINFO | string | Sem descrição | No description |
+| INSTRMAE | string | Sem descrição | No description |
+| INSTRPAI | string | Sem descrição | No description |
+| INSTRUCAO | string | Sem descrição | No description |
+| LINHAA | string | Linha A do atestado, conforme a Classificação Internacional de Doença (CID), 10a. Revisão | Line A of the certificate, according to the International Classification of Diseases (ICD), 10th Revision |
+| LINHAB | string | Linha B do atestado, conforme a Classificação Internacional de Doença (CID), 10a. Revisão | Line B of the certificate, according to the International Classification of Diseases (ICD), 10th Revision |
+| LINHAC | string | Linha C do atestado | Line C of the certificate |
+| LINHAD | string | Linha D do atestado | Line D of the certificate |
+| LINHAII | string | Linha II do atestado | Line II of the certificate |
+| LINHAA_O | string | Sem descrição | No description |
+| LINHAB_O | string | Sem descrição | No description |
+| LINHAC_O | string | Sem descrição | No description |
+| LINHAD_O | string | Sem descrição | No description |
+| LINHAII_O | string | Sem descrição | No description |
+| LOCACID | integer | Sem descrição | No description |
+| NECROPSIA | integer | Indica se houve necrópsia, conforme a tabela: 9 - Ignorado, 1 - Sim, 2 - Não | Indicates whether there was a necropsy, according to the table: 9 - Ignored, 1 - Yes, 2 - No |
+| def_necropsia | string | Confirmação do diagnóstico por necrópsia (Nominal, com as seguintes classificações: Sim, Não, Ignorado) | Confirmation of the diagnosis by necropsy (Nominal, with the following classifications: Yes, No, Ignored) |
+| NUDIASINF | string | Sem descrição | No description |
+| NUDIASOBCO | string | Diferença entre a data óbito e a data conclusão da investigação, em dias. | Difference between the date of death and the date of completion of the investigation, in days. |
+| NUDIASOBIN | string | Sem descrição | No description |
+| NUMEROLOTE | integer | Número do lote | Lot number |
+| NUMEXPORT | integer | Sem descrição | No description |
+| NUMREGCART | integer | Sem descrição | No description |
+| OCUPACAO | integer | Sem descrição | No description |
+| OCUPPAI | integer | Sem descrição | Probably: Father's Ocupation |
+| ORIGEM | integer | Origem do registro 1- Oracle, 2 - Banco estadual diponibilizado via FTP, 3 - Banco SEADE, 9 - Ignorado | Record origin 1- Oracle, 2 - State bank provided via FTP, 3 - SEADE bank, 9 - Ignored |
+| PESONASC | integer | Sem descrição | No description |
+| SEMANGEST | integer | Sem descrição | No description |
+| SERIESCFAL | integer | Série escolar do falecido. Valores de 1 a 8. | Series of the deceased. Values from 1 to 8. |
+| SERIESCMAE | integer | Série escolar da mãe. Valores de 1 a 8. | Series of the mother. Values from 1 to 8. |
+| STCODIFICA | string | Status de instalação: se codificadora (valor - S) ou não (valor - N) | Installation status: if codificadora (value - S) or not (value - N) |
+| STDOEPIDEM | integer | Status de DO Epidemiológica. Valores: 1 - SIM, 0 - NÃO. | Status of Epidemiological DO. Values: 1 - YES, 0 - NO. |
+| STDONOVA | integer | Status de DO Nova. Valores: 1 - SIM, 0 - NÃO. | Status of New DO. Values: 1 - YES, 0 - NO. |
+| TIPOACID | integer | Sem descrição | No description |
+| TIPOGRAV | integer | Sem descrição | Probably: Type of pregnancy |
+| TIPOPARTO | integer | Sem descrição | Probably: Type of Birth |
+| TIPOVIOL | integer | Sem descrição | No description |
+| TPASSINA | integer | Sem descrição | No description |
+| TPNIVELINV | string | Sem descrição | No description |
+| TPPOS | string | Óbito investigado 1 - Sim, 2 - Não | Investigated death 1 - Yes, 2 - No |
+| TPRESGINFO | integer | Sem descrição | No description |
+| UFINFORM | string | Código da UF que informou o registro. | Code of the UF that informed the record. |
+| VERSAOSCB | string | Versão do seletor de causa básica | Basic cause selector version |
+| VERSAOSIST | string | Versão do sistema | System version |
+| contador | integer | Sem descrição | No description |
+
+## SINASC Variables Dictionary (in English)
 
 | Variable | Type | Description |
 | --- | --- | --- |
