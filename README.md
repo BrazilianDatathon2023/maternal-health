@@ -1,5 +1,11 @@
 # Saúde Materno Fetal / Maternal Fetal Health Track
 
+## Datasets
+
+* Sistema de Informações sobre Nascidos Vivos
+* Sistema de Informações sobre Óbitos Fetais
+* Indíce Socioeconômico de Saúde (GeoSES)
+
 ## Sugestões de projetos
 1. Prematuridade
 - Análise de variáveis associadas com prematuridade no Brasil
@@ -21,26 +27,26 @@
     - Análise de viéses entre grupos demográficos, estados
 
 
-## Datasets
-
 ## How to get the data from the Brazilian Platform
 1. Open these:
 * [Sistema de Informações sobre Nascidos Vivos](https://pcdas.icict.fiocruz.br/conjunto-de-dados/sistema-de-informacao-sobre-nascidos-vivos/)
-* [Sistema de Informações sobre Óbitos Fetais ](https://pcdas.icict.fiocruz.br/conjunto-de-dados/sistema-de-informacao-sobre-mortalidade-declaracao-de-obitos-fetais-sim-dofet)
+* [Sistema de Informações sobre Óbitos Fetais](https://pcdas.icict.fiocruz.br/conjunto-de-dados/sistema-de-informacao-sobre-mortalidade-declaracao-de-obitos-fetais-sim-dofet)
 2. Register yourself (Brazilian ID required)
 3. Access and explore the data
 
-## How to get the data from Google Drive
+## Alternatively, How to get the data from Google Drive
 1. Download the data from this [link](https://drive.google.com/file/d/1D2RvrBoNO1dXt6CQy0CLJk7FNXvOpqjC/view?usp=share_link)
 2. Place `ETLSINASC.zip` under a folder in the root called `data` 
 3. Place `ETLSIM.DOFET.zip` under a folder in the root called `data`	
 
 
-## How to split the data into chunks (ETLSINASC only)
-1. Run `python split_data.py`
-2. The split CSV files will show up in a folder called `split`
+## Social Determinants of Health - GeoSES
+* Original Paper: [Artigo GeoSES](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7190143/)
+* Open the folder `GeoSES`, where you can find the data set and original variables
 
-## Sistema de Informações sobre Nascidos Vivos (SINASC) - Dicionário de Variáveis
+## Dicionário de Variáveis
+
+### Sistema de Informações sobre Nascidos Vivos (SINASC)
 (em Portuguese & translated to English)
 
 | Variável | Tipo | Descrição | Description |
