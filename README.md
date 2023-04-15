@@ -35,7 +35,7 @@
 3. Access and explore the data
 
 ## Alternatively, How to get the data from Google Drive
-1. Download the data from this [link](https://drive.google.com/file/d/1D2RvrBoNO1dXt6CQy0CLJk7FNXvOpqjC/view?usp=share_link)
+1. Download the data from this [link](https://drive.google.com/drive/folders/12QNDVdBV-Iw7N9Cvu5wuDEWwe2CAeG_n?usp=share_link)
 2. Place `ETLSINASC.zip` under a folder in the root called `data` 
 3. Place `ETLSIM.DOFET.zip` under a folder in the root called `data`	
 
