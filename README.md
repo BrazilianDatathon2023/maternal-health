@@ -4,7 +4,7 @@
 
 * Sistema de Informações sobre Nascidos Vivos
 * Sistema de Informações sobre Óbitos Fetais
-* Indíce Socioeconômico de Saúde (GeoSES)
+* Índice Socioeconômico de Saúde (GeoSES)
 
 ## Sugestões de projetos
 1. Prematuridade
