@@ -43,6 +43,9 @@
 ## Social Determinants of Health - GeoSES
 * Original Paper: [Artigo GeoSES](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7190143/)
 * Open the folder `GeoSES`, where you can find the data set and original variables
+* From the original paper:
+
+Here we introduce the GeoSES, a composite index that summarizes the main dimensions of the Brazilian socioeconomic context for research purposes. We created the index from the 2010 Brazilian Census, whose variables selection was guided by theoretical references for health studies. The proposed index incorporates seven socioeconomic dimensions: education, mobility, poverty, wealth, income, segregation, and deprivation of resources and services. 
 
 ## Dicionário de Variáveis
 
